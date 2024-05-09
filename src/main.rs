@@ -18,7 +18,13 @@ fn main() {
 
     let trimmed = line.trim();
     match trimmed.parse::<u32>() {
-        Ok(i) => println!("Your integer input: {}", i),
+        Ok(i) => match i {
+            1 => println!("Selected to add a new entry"),
+            2 => println!("Selected to explorers entries"),
+            3 => println!("Selected to delete an entry"),
+            4 => println!("Selected to exit the application"),
+            _ => println!("Wrong entry! try again (1-4).")
+        },
         Err(..) => println!("This was not an integer: {}", trimmed),
     };
 }
