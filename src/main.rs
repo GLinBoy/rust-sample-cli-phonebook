@@ -1,4 +1,5 @@
 use std::io;
+use std::io::Write;
 
 fn main() {
     println!("1. Add new entry");
@@ -7,6 +8,7 @@ fn main() {
     println!("4. Quite");
     println!("-----------------------------");
     print!("Select an option: ");
+    io::stdout().flush().unwrap();
 
     let mut line = String::new();
 
